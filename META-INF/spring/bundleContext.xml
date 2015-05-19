@@ -8,12 +8,12 @@
             http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 
 	<!-- 注册Servlet方式,如下 -->
-	<bean id="ExcelExportServlet" class=""	</bean>
+	<bean id="ExcelExportServlet" class=""></bean>
 	<bean id="ExcelImportServlet" class=""></bean>
 	<bean id="CaptchaBuilderServlet" class=""></bean>
 	
 	
- 	<bean id="ECWebhttpServiceConfig" class="com.ygsoft.ec.platform.web.core.HttpServiceConfig">
+ 	<bean id="WebhttpServiceConfig" class="com.ylmdawn.osgi.springsecurity.core.HttpServiceConfig">
  		<!--每个需要进行安全控制的web bundle，都必须配置webconfig属性。  -->
  		<property name="webconfig">
 			<map>
