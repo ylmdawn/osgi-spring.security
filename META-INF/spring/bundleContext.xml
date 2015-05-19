@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:osgi="http://www.springframework.org/schema/osgi"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+
+	<!-- 注册Servlet方式,如下 -->
+	<bean id="ExcelExportServlet" class=""	</bean>
+	<bean id="ExcelImportServlet" class=""></bean>
+	<bean id="CaptchaBuilderServlet" class=""></bean>
+	
+	
+ 	<bean id="ECWebhttpServiceConfig" class="com.ygsoft.ec.platform.web.core.HttpServiceConfig">
+ 		<!--每个需要进行安全控制的web bundle，都必须配置webconfig属性。  -->
+ 		<property name="webconfig">
+			<map>
+				<!-- 静态资源的根目录名称 -->
+				<entry key="webroot" value="webcontent" />
+				<!-- 注册资源访问的根路径 -->
+				<entry key="baseurl" value="/ylmdawn.platform" />
+			</map>
+		</property>
+		<!-- 当存在自定义的servlet时，通过如下方式注册访问路径。 -->
+		<property name="servletconfig">
+			<map>
+				<!-- 自定义Servlet的访问路径，切记：该路径始终会在baseurl之内 -->
+				<entry key="/excelexportservlet" value="ExcelExportServlet" /><!-- 访问路径： /ylmdawn.platform/excelexportservlet-->
+				<entry key="/excelimportservlet" value="ExcelImportServlet" />
+				<entry key="/captchabuilderservlet" value="CaptchaBuilderServlet" /> 
+			</map>
+		</property> 
+ 	</bean> 
+
+</beans>

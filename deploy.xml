@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<platform-dynamic-module>
+  <web>
+    <bundle-context-path>/cache</bundle-context-path>
+    <bundle-face>/webcontent</bundle-face>
+    <servlet-extensions>/rest/*</servlet-extensions>
+    <resource extension-names="/*.xml,/*.json,/*.jpg,/*.jar,/*.swf,/*.fla,/*.html,/*.xsl,/*.properties,/*.png,/*.eot,/*.js,/*.xsd,/*.css,/*.ini,/*.gif,/*.htm,/*.htc,/*.vbs,/*.bmp,/*.xap,/*.dll,/*.bat">
+      <virtual-resource context-path="/mx">
+        <location extension-names="/*.eot,/*.js,/*.jpg,/*.swf,/*.xsl,/*.html,/*.css,/*.png,/*.gif,/*.htm">mx</location>
+      </virtual-resource>
+    </resource>
+    <use-platform-component>true</use-platform-component>
+  </web>
+</platform-dynamic-module>

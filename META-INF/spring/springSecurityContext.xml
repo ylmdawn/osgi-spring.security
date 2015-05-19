@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	  xmlns:beans="http://www.springframework.org/schema/beans"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xmlns:context="http://www.springframework.org/schema/context"
+	  xmlns:osgi="http://www.springframework.org/schema/osgi"
+	  xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+	           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	           http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+ 	
+
+	<!-- 
+		No bean named 'springSecurityFilterChain' is defined 
+		1、 这时发布一下你的项目，查看tomcat的webapps目录下，找到你的项目文件夹的classes文件夹有没有相关的spring.xml文件存在，不存在就会报错 
+		2、查看web.xml文件<param-value>标签有没有引入applicationContext-security.xml这个文件 
+	-->
+
+	<!-- 不用经过spring security过滤，一般js、css都不需要过滤 -->
+	<http pattern="/*/scripts/**" security="none" />
+	<http pattern="/*/themes/**" security="none" />
+	<http pattern="/*/index.html#/login" security="none" />
+
+	<!-- auto-config="true" -->
+	<http auto-config="true"></http>
+</beans:beans>
